@@ -23,8 +23,8 @@ class SimpleLightBoxPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        ImageColumn::macro("simpleLightbox", function() {
-            return $this->extraImgAttributes(["onclick" => "SimpleImageLightBox.open(event)"]);
+        ImageColumn::macro('simpleLightbox', function () {
+            return $this->extraImgAttributes(['onclick' => 'SimpleImageLightBox.open(event)']);
         });
     }
 
