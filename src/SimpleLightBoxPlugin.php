@@ -3,6 +3,7 @@
 namespace SolutionForest\FilamentSimpleLightBox;
 
 use Filament\Contracts\Plugin;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Tables\Columns\ImageColumn;
@@ -24,6 +25,9 @@ class SimpleLightBoxPlugin implements Plugin
     public function boot(Panel $panel): void
     {
         ImageColumn::macro("simpleLightbox", function() {
+            return $this->extraImgAttributes(["onclick" => "SimpleImageLightBox.open(event)"]);
+        });
+        ImageEntry::macro("simpleLightbox", function() {
             return $this->extraImgAttributes(["onclick" => "SimpleImageLightBox.open(event)"]);
         });
     }
