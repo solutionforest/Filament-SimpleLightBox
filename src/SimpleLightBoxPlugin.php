@@ -27,8 +27,8 @@ class SimpleLightBoxPlugin implements Plugin
         ImageColumn::macro('simpleLightbox', function () {
             return $this->extraImgAttributes(['onclick' => 'SimpleImageLightBox.open(event)']);
         });
-        ImageEntry::macro("simpleLightbox", function() {
-            return $this->extraImgAttributes(["onclick" => "SimpleImageLightBox.open(event)"]);
+        ImageEntry::macro('simpleLightbox', function () {
+            return $this->extraImgAttributes(['onclick' => 'SimpleImageLightBox.open(event)']);
         });
     }
 
