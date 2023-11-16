@@ -7,12 +7,9 @@ use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
-use Filament\Support\Facades\FilamentIcon;
-use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
 use SolutionForest\FilamentSimpleLightBox\Commands\FilamentSimpleLightBoxCommand;
 use SolutionForest\FilamentSimpleLightBox\Testing\TestsFilamentSimpleLightBox;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -21,7 +18,6 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
     public static string $name = 'filament-simplelightbox';
 
     public static string $viewNamespace = 'filament-simplelightbox';
-
 
     public function packageBooted(): void
     {
