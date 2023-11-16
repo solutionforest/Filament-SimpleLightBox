@@ -2,13 +2,11 @@
 
 namespace SolutionForest\FilamentSimpleLightBox;
 
-use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Livewire\Features\SupportTesting\Testable;
-use SolutionForest\FilamentSimpleLightBox\Commands\FilamentSimpleLightBoxCommand;
 use SolutionForest\FilamentSimpleLightBox\Testing\TestsFilamentSimpleLightBox;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -19,16 +17,26 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
 
     public static string $viewNamespace = 'filament-simplelightbox';
 
+    public function configurePackage(Package $package): void
+    {
+        /*
+         * This class is a Package Service Provider
+         *
+         * More info: https://github.com/spatie/laravel-package-tools
+         */
+        $package->name(static::$name);
+
+    }
+
+    public function packageRegistered(): void
+    {
+    }
+
     public function packageBooted(): void
     {
         // Asset Registration
         FilamentAsset::register(
             $this->getAssets(),
-            $this->getAssetPackageName()
-        );
-
-        FilamentAsset::registerScriptData(
-            $this->getScriptData(),
             $this->getAssetPackageName()
         );
 
@@ -51,19 +59,5 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
             Css::make('filament-simplelightbox-styles', __DIR__ . '/../resources/dist/filament-simplelightbox.css'),
             Js::make('filament-simplelightbox-scripts', __DIR__ . '/../resources/dist/filament-simplelightbox.js'),
         ];
-    }
-
-    /**
-     * @return array<class-string>
-     */
-    protected function getCommands(): array
-    {
-        return [
-            FilamentSimpleLightBoxCommand::class,
-        ];
-    }
-
-    public function configurePackage(Package $package): void
-    {
     }
 }
