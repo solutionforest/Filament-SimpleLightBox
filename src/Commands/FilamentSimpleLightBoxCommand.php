@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace SolutionForest\FilamentSimpleLightBox\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentSimpleLightBoxCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-simplelightbox';
 
     public $description = 'My command';
 
