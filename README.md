@@ -7,7 +7,7 @@
 
 
 
-
+Does not rely on any third-party JavaScript libraries.
 
 ## Installation
 
