@@ -1,4 +1,4 @@
-npm install fslightboxincludes:
+includes:
     - phpstan-baseline.neon
 
 parameters:
