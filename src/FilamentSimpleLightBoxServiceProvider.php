@@ -3,7 +3,6 @@
 namespace SolutionForest\FilamentSimpleLightBox;
 
 use Filament\Support\Assets\Asset;
-use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Livewire\Features\SupportTesting\Testable;
