@@ -2,13 +2,13 @@
 
 namespace SolutionForest\FilamentSimpleLightBox;
 
+use Filament\Contracts\Plugin;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Panel;
-use Filament\Contracts\Plugin;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Infolists\Components\ImageEntry;
 
 class SimpleLightBoxPlugin implements Plugin
 {
