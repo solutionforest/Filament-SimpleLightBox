@@ -25,6 +25,15 @@ composer require solution-forest/filament-simplelightbox
 ## Usage
 
 ```php
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        // ...
+        ->plugin(SimpleLightBoxPlugin::make())
+}
+```
+
+```php
 Tables\Columns\ImageColumn::make('image')
                     ->simpleLightbox()
 ```
