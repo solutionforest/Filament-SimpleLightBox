@@ -1,33 +1,55 @@
-window.SimpleImageLightBox = {
-    open(e) {
+import fslightbox from 'fslightbox';
+
+window.fslightbox = fslightbox;
+
+window.SimpleLightBox = {
+    getViewerURL(url) {
+        // https://gist.github.com/theel0ja/b9e44a961f892ccf43e217ab74b9417b
+        // Extract the file extension
+        let extension = url.split('.').pop();
+
+        switch(extension) {
+            case 'pdf':
+                return `https://docs.google.com/viewer?url=${url}&embedded=true`;
+            case 'doc':
+            case 'docx':
+            case 'xls':
+            case 'xlsx':
+            case 'ppt':
+            case 'pptx':
+                return `https://view.officeapps.live.com/op/embed.aspx?src=${url}`;
+            default:
+                return url;
+        }
+    },
+    createIframe(url) {
+        // Create a new iframe element
+        document.getElementById("tmp-iframe")?.remove();
+        let iframe = document.createElement('iframe');
+        iframe.src = this.getViewerURL(url);
+        iframe.id = "tmp-iframe";
+        iframe.className = "fslightbox-source";
+        iframe.frameBorder = "0";
+        iframe.allow = "autoplay; fullscreen";
+        iframe.style = "width: 80vw; height: 80vh;";
+        iframe.setAttribute("allowFullScreen", "");
+        document.body.appendChild(iframe);
+    },
+    open(e , url ) {
         e.preventDefault();
-        let src = e.target.src;
-        let lightboxDiv = document.createElement('div');
-        lightboxDiv.innerHTML = `<div id="SimpleImageLightBox"
-                    @keydown.escape.window="document.querySelector('#SimpleImageLightBox').remove()"
-                    class="fixed inset-0 flex items-center justify-center p-4 bg-black/50 bg-opacity-75"
-                    style="z-index: 10000;"
-                    >
-                    <div class="relative bg-white max-h-full max-w-2xl p-6 mx-auto rounded shadow" onclick="event.stopPropagation()">
-                        <img src="${src}" alt="Lightbox image" class="object-cover w-full h-full rounded" />
-                        <button class="absolute p-2 m-2 text-white rounded-full focus:outline-none" style="top:0; right:0" >
-                        ✖️
-                        </button>
-                    </div>
-                    </div>
-                `;
-        lightboxDiv.addEventListener('click', () => this.close());
-        lightboxDiv.querySelector('button').addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.close();
-        });
-        lightboxDiv.querySelector('div').addEventListener('keydown', e => {
-            if (e.key === 'Escape') this.close();
-        });
-        this.lightboxDiv = lightboxDiv;
-        document.body.appendChild(lightboxDiv);
+        const lightbox = new FsLightbox();
+        if(url !== undefined) {
+            this.createIframe(url);
+            lightbox.props.sources = [document.getElementById("tmp-iframe")];
+            lightbox.open();
+            return;
+        }
+        if(e.target.src !== undefined) {
+            lightbox.props.sources = [e.target.src];
+            lightbox.open();
+        }
     },
     close() {
-        this.lightboxDiv.remove();
     }
 }
+

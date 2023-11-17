@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "alpinejs": "^3.13.2",
+        "fslightbox": "^3.4.1",
         "luminous-lightbox": "^2.4.0"
     }
 }

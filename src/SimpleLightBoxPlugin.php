@@ -7,6 +7,7 @@ use Filament\Infolists\Components\ImageEntry;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class SimpleLightBoxPlugin implements Plugin
 {
@@ -24,21 +25,26 @@ class SimpleLightBoxPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        ImageColumn::macro('simpleLightbox', function () {
-            return $this->extraImgAttributes(['onclick' => 'SimpleImageLightBox.open(event)']);
+
+        ImageColumn::macro('simpleLightbox', macro: function () {
+            /** @phpstan-ignore-next-line */
+            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event)']);
         });
+
         ImageEntry::macro('simpleLightbox', function () {
-            return $this->extraImgAttributes(['onclick' => 'SimpleImageLightBox.open(event)']);
+            /** @phpstan-ignore-next-line */
+            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event)']);
         });
+
+        TextColumn::macro('simpleLightbox', function ($url) {
+            /** @phpstan-ignore-next-line */
+            return $this->extraAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
+        });
+
     }
 
     public static function make(): static
     {
         return app(static::class);
-    }
-
-    public static function get(): static
-    {
-        return filament(app(static::class)->getId());
     }
 }
