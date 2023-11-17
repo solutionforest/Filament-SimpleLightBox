@@ -2,12 +2,13 @@
 
 namespace SolutionForest\FilamentSimpleLightBox;
 
-use Filament\Contracts\Plugin;
-use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Panel;
+use Filament\Contracts\Plugin;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Infolists\Components\ImageEntry;
 
 class SimpleLightBoxPlugin implements Plugin
 {
@@ -37,6 +38,11 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         TextColumn::macro('simpleLightbox', function ($url) {
+            /** @phpstan-ignore-next-line */
+            return $this->extraAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
+        });
+
+        TextEntry::macro('simpleLightbox', function ($url) {
             /** @phpstan-ignore-next-line */
             return $this->extraAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
         });
