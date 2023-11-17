@@ -6,8 +6,14 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/solutionforest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solutionforest/filament-simplelightbox)
 
 
-Lightbox Javascript : [fslightbox](https://github.com/banthagroup/fslightbox "fslightbox") 
-Pdf and Office previewer [information](https://gist.github.com/theel0ja/b9e44a961f892ccf43e217ab74b9417b "information")
+## Description 
+
+Filament SimpleLightbox is a PHP package that provides a simple and lightweight solution for implementing a lightbox feature in your Filament admin panel. It allows you to easily preview Image, PDF and Office documents within your Filament.
+
+## Features
+- Integration with the [fslightbox](https://github.com/banthagroup/fslightbox "fslightbox")  JavaScript library for the lightbox functionality.
+- Supports previewing PDF and Office documents. [information](https://gist.github.com/theel0ja/b9e44a961f892ccf43e217ab74b9417b "information")
+- Easy installation and usage.
 
 ## Installation
 
