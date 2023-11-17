@@ -1,9 +1,8 @@
 # Filament SimpleLightbox
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/solutionforest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solutionforest/filament-simplelightbox)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/solution-forest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solution-forest/filament-simplelightbox)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/solutionforest/filament-simplelightbox/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/solutionforest/filament-simplelightbox/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/solutionforest/filament-simplelightbox/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/solutionforest/filament-simplelightbox/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/solutionforest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solutionforest/filament-simplelightbox)
+[![Total Downloads](https://img.shields.io/packagist/dt/solutionforest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solution-forest/filament-simplelightbox)
 
 
 ## Description 
@@ -20,7 +19,7 @@ Filament SimpleLightbox is a PHP package that provides a simple and lightweight 
 You can install the package via composer:
 
 ```bash
-composer require solutionforest/filament-simplelightbox
+composer require solution-forest/filament-simplelightbox
 ```
 
 ## Usage
