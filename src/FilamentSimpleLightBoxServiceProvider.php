@@ -55,8 +55,6 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('filament-simplelightbox', __DIR__ . '/../resources/dist/components/filament-simplelightbox.js'),
-            Css::make('filament-simplelightbox-styles', __DIR__ . '/../resources/dist/filament-simplelightbox.css'),
             Js::make('filament-simplelightbox-scripts', __DIR__ . '/../resources/dist/filament-simplelightbox.js'),
         ];
     }

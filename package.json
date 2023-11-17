@@ -2,9 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev:styles": "npx tailwindcss -i resources/css/index.css -o resources/dist/filament-simplelightbox.css --postcss --watch",
         "dev:scripts": "node bin/build.js --dev",
-        "build:styles": "npx tailwindcss -i resources/css/index.css -o resources/dist/filament-simplelightbox.css --postcss --minify && npm run purge",
         "build:scripts": "node bin/build.js",
         "purge": "filament-purge -i resources/dist/filament-simplelightbox.css -o resources/dist/filament-simplelightbox.css -v 3.x",
         "dev": "npm-run-all --parallel dev:*",
@@ -24,8 +22,6 @@
         "tailwindcss": "^3.3.3"
     },
     "dependencies": {
-        "alpinejs": "^3.13.2",
-        "fslightbox": "^3.4.1",
         "luminous-lightbox": "^2.4.0"
     }
 }
