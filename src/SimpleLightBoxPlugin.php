@@ -27,7 +27,8 @@ class SimpleLightBoxPlugin implements Plugin
     public function boot(Panel $panel): void
     {
 
-        ImageColumn::macro('simpleLightbox', macro: function () {
+        ImageColumn::macro('simpleLightbox', macro: function ($url) {
+            // if $url exist than use $url
             /** @phpstan-ignore-next-line */
             return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event)']);
         });
