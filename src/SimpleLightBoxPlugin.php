@@ -26,16 +26,14 @@ class SimpleLightBoxPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-
-        ImageColumn::macro('simpleLightbox', macro: function ($url) {
-            // if $url exist than use $url
+        ImageColumn::macro('simpleLightbox', macro: function ($url = null) {
             /** @phpstan-ignore-next-line */
-            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event)']);
+            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
         });
 
-        ImageEntry::macro('simpleLightbox', function () {
+        ImageEntry::macro('simpleLightbox', function ($url = null) {
             /** @phpstan-ignore-next-line */
-            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event)']);
+            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
         });
 
         TextColumn::macro('simpleLightbox', function ($url) {
