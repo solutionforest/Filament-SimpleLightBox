@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/solution-forest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solution-forest/filament-simplelightbox)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/solutionforest/filament-simplelightbox/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/solutionforest/filament-simplelightbox/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/solutionforest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solution-forest/filament-simplelightbox)
+[![Total Downloads](https://img.shields.io/packagist/dt/solution-forest/filament-simplelightbox.svg?style=flat-square)](https://packagist.org/packages/solution-forest/filament-simplelightbox)
 
 
 ## Description 
