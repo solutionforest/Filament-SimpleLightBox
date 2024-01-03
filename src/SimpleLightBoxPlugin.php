@@ -28,12 +28,16 @@ class SimpleLightBoxPlugin implements Plugin
     {
         ImageColumn::macro('simpleLightbox', macro: function ($url = null) {
             /** @phpstan-ignore-next-line */
-            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
+            return $this
+                ->extraAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')'])
+                ->extraImgAttributes(['class' => 'simple-light-box-img-indicator']);
         });
 
         ImageEntry::macro('simpleLightbox', function ($url = null) {
             /** @phpstan-ignore-next-line */
-            return $this->extraImgAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']);
+            return $this
+                ->extraAttributes(['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')'])
+                ->extraImgAttributes(['class' => 'simple-light-box-img-indicator']);
         });
 
         TextColumn::macro('simpleLightbox', function ($url) {

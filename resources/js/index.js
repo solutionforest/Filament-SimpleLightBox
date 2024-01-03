@@ -22,6 +22,21 @@ window.SimpleLightBox = {
                 return url;
         }
     },
+    getMultipleImgURL(element) {
+
+        try {
+            if (element != undefined && element != null) {
+                let imgArr = element?.closest('div')?.querySelectorAll('img.simple-light-box-img-indicator');
+                if (imgArr != undefined && Array.from(imgArr).length > 0) {
+                    return Array.from(imgArr, (imgElm) => imgElm.getAttribute('src'));
+                }
+            }
+        } catch (error) {
+            //
+        }
+
+        return null;
+    },
     createIframe(url) {
         // Create a new iframe element
         document.getElementById("tmp-iframe")?.remove();
@@ -49,6 +64,15 @@ window.SimpleLightBox = {
                 return;
             }
         }
+
+        // Multiple images
+        let multipleURL = this.getMultipleImgURL(e.target);
+        if (multipleURL != null && multipleURL.length > 0) {
+            lightbox.props.sources = multipleURL;
+            lightbox.open();
+            return;
+        }
+
         if (e.target.src !== undefined) {
             lightbox.props.sources = [e.target.src];
             lightbox.open();
