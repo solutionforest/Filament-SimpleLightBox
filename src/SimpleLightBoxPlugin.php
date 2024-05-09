@@ -29,16 +29,18 @@ class SimpleLightBoxPlugin implements Plugin
         ImageColumn::macro('simpleLightbox', macro: function ($url = null) {
             $extraAttributes = $this->extraAttributes[0] ?? [];
             $extraImgAttributes = $this->extraImgAttributes[0] ?? [];
+
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
-                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \''.$url.'\')']))
+                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']))
                 ->extraImgAttributes(array_merge($extraImgAttributes, ['class' => 'simple-light-box-img-indicator']));
         });
 
         ImageEntry::macro('simpleLightbox', function ($url = null) {
             $extraAttributes = $this->extraAttributes[0] ?? [];
             $extraImgAttributes = $this->extraImgAttributes[0] ?? [];
+
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
@@ -48,18 +50,20 @@ class SimpleLightBoxPlugin implements Plugin
 
         TextColumn::macro('simpleLightbox', function ($url) {
             $extraAttributes = $this->extraAttributes[0] ?? [];
+
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
-                ->extraAttributes(array_merge($extraAttributes,['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
+                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
         });
 
         TextEntry::macro('simpleLightbox', function ($url) {
             $extraAttributes = $this->extraAttributes[0] ?? [];
+
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
-                ->extraAttributes(array_merge($extraAttributes,['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
+                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
         });
 
     }
