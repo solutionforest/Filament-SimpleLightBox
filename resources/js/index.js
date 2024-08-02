@@ -89,11 +89,7 @@ window.SimpleLightBox = {
         let grandParent = parent.closest(tag);
         let url = grandParent.getAttribute(attribute);
 
-        console.log('Open url for text entry: ' + url);
         if (url !== undefined) {
-            console.log('Open viewer url for text entry: ' + this.getViewerURL(url));
-
-            console.log('condition: ' + url !== this.getViewerURL(url));
             if (url !== this.getViewerURL(url)) {
                 this.createIframe(url);
                 lightbox.props.sources = [document.getElementById("tmp-iframe")];
@@ -103,9 +99,6 @@ window.SimpleLightBox = {
                 lightbox.open();
                 return;
             }
-            // lightbox.props.sources = [url];
-            // lightbox.open();
-            // return;
         }
     }
 }
