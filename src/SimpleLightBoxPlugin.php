@@ -19,10 +19,7 @@ class SimpleLightBoxPlugin implements Plugin
         return FilamentSimpleLightBoxServiceProvider::$name;
     }
 
-    public function register(Panel $panel): void
-    {
-
-    }
+    public function register(Panel $panel): void {}
 
     public function boot(Panel $panel): void
     {
@@ -32,7 +29,7 @@ class SimpleLightBoxPlugin implements Plugin
                 $url = $livewire->evaluate($url);
             }
 
-            if (!is_string($url) || is_null($url) || empty($url)) {
+            if (! is_string($url) || is_null($url) || empty($url)) {
                 $url = null;
             }
 

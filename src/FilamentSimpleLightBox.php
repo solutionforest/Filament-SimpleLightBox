@@ -2,6 +2,4 @@
 
 namespace SolutionForest\FilamentSimpleLightBox;
 
-class FilamentSimpleLightBox
-{
-}
+class FilamentSimpleLightBox {}

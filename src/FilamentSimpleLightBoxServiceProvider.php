@@ -27,9 +27,7 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
 
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -40,7 +38,7 @@ class FilamentSimpleLightBoxServiceProvider extends PackageServiceProvider
         );
 
         // Testing
-        Testable::mixin(new TestsFilamentSimpleLightBox());
+        Testable::mixin(new TestsFilamentSimpleLightBox);
     }
 
     protected function getAssetPackageName(): ?string
