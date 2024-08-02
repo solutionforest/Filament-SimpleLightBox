@@ -46,6 +46,7 @@ class SimpleLightBoxPlugin implements Plugin
             if ($urlAsDefault) {
                 $this->defaultImageUrl($url);
             }
+
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
@@ -53,7 +54,6 @@ class SimpleLightBoxPlugin implements Plugin
                 ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']))
                 ->extraImgAttributes(array_merge($extraImgAttributes, ['class' => 'simple-light-box-img-indicator']));
         });
-
 
         ImageEntry::macro('simpleLightbox', function ($url = null, $urlAsDefault = true) use ($ensureLightBoxUrl) {
 
