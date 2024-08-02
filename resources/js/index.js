@@ -73,9 +73,39 @@ window.SimpleLightBox = {
             return;
         }
 
+        // Image src
         if (e.target.src !== undefined) {
             lightbox.props.sources = [e.target.src];
             lightbox.open();
+            return;
+        }
+    },
+    openForTextEntry: function (event, tag = 'a', attribute = 'href') {
+        event.preventDefault();
+        const lightbox = new FsLightbox();
+
+        let target = event.target;
+        let parent = target.closest('.fi-in-text-with-lightbox');
+        let grandParent = parent.closest(tag);
+        let url = grandParent.getAttribute(attribute);
+
+        console.log('Open url for text entry: ' + url);
+        if (url !== undefined) {
+            console.log('Open viewer url for text entry: ' + this.getViewerURL(url));
+
+            console.log('condition: ' + url !== this.getViewerURL(url));
+            if (url !== this.getViewerURL(url)) {
+                this.createIframe(url);
+                lightbox.props.sources = [document.getElementById("tmp-iframe")];
+                lightbox.props.onClose = function(instance) {
+                    document.getElementById("tmp-iframe")?.remove();
+                }
+                lightbox.open();
+                return;
+            }
+            // lightbox.props.sources = [url];
+            // lightbox.open();
+            // return;
         }
     }
 }

@@ -26,7 +26,38 @@ class SimpleLightBoxPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        ImageColumn::macro('simpleLightbox', macro: function ($url = null) {
+        $ensureLightBoxUrl = function ($url, $livewire) {
+
+            if ($url instanceof \Closure) {
+                $url = $livewire->evaluate($url);
+            }
+
+            if (!is_string($url) || is_null($url) || empty($url)) {
+                $url = null;
+            }
+
+            return $url;
+        };
+
+        ImageColumn::macro('simpleLightbox', macro: function ($url = null) use ($ensureLightBoxUrl) {
+
+            $url = $ensureLightBoxUrl($url, $this);
+
+            $extraAttributes = $this->extraAttributes[0] ?? [];
+            $extraImgAttributes = $this->extraImgAttributes[0] ?? [];
+
+            /** @phpstan-ignore-next-line */
+            return $this
+                ->openUrlInNewTab()
+                ->action(fn () => null) // override default action for table row
+                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']))
+                ->extraImgAttributes(array_merge($extraImgAttributes, ['class' => 'simple-light-box-img-indicator']));
+        });
+
+        ImageEntry::macro('simpleLightbox', function ($url = null) use ($ensureLightBoxUrl) {
+
+            $url = $ensureLightBoxUrl($url, $this);
+
             $extraAttributes = $this->extraAttributes[0] ?? [];
             $extraImgAttributes = $this->extraImgAttributes[0] ?? [];
 
@@ -37,33 +68,36 @@ class SimpleLightBoxPlugin implements Plugin
                 ->extraImgAttributes(array_merge($extraImgAttributes, ['class' => 'simple-light-box-img-indicator']));
         });
 
-        ImageEntry::macro('simpleLightbox', function ($url = null) {
-            $extraAttributes = $this->extraAttributes[0] ?? [];
-            $extraImgAttributes = $this->extraImgAttributes[0] ?? [];
+        TextColumn::macro('simpleLightbox', function ($url = null) use ($ensureLightBoxUrl) {
 
-            /** @phpstan-ignore-next-line */
-            return $this
-                ->openUrlInNewTab()
-                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']))
-                ->extraImgAttributes(array_merge($extraImgAttributes, ['class' => 'simple-light-box-img-indicator']));
-        });
+            $url = $ensureLightBoxUrl($url, $this);
 
-        TextColumn::macro('simpleLightbox', function ($url) {
             $extraAttributes = $this->extraAttributes[0] ?? [];
 
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
+                ->url($url)
                 ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
         });
 
-        TextEntry::macro('simpleLightbox', function ($url) {
+        TextEntry::macro('simpleLightbox', function ($url = null) {
+
             $extraAttributes = $this->extraAttributes[0] ?? [];
 
             /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
-                ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
+                // ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
+                // Special case for text entry, open lightbox for text entry as cannot evaluate url at this point
+                ->url($url)
+                ->extraAttributes(array_merge($extraAttributes, [
+                    'x-on:click' => 'SimpleLightBox.openForTextEntry(event, \'a\', \'href\')',
+                    'class' => 'fi-in-text-with-lightbox',
+                ]))
+                ->extraEntryWrapperAttributes([
+                    'class' => 'fi-in-text-with-lightbox-wrapper',
+                ], true);
         });
 
     }
