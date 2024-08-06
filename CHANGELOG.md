@@ -2,6 +2,10 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## 0.0.9 - 2024-08-06
+
+**Full Changelog**: https://github.com/solutionforest/Filament-SimpleLightBox/compare/0.0.8...0.0.9
+
 ## 0.0.8 - 2024-08-02
 
 ### What's Changed
