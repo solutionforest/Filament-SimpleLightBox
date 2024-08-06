@@ -56,22 +56,22 @@ Tables\Columns\TextColumn::make('pdf_url')
                     ->simpleLightbox("Your Url address"),
 ```
 
-You can pass parameter to generate url, also the url can be used as default value (`urlAsDefault` default is true):
+You can pass parameter to generate url, also the url can be used as default value (`defaultDisplayUrl` default is true):
 ```php
 Tables\Columns\ImageColumn::make('image')
-    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", urlAsDefault: true),
+    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", defaultDisplayUrl: true),
 ```
 ```php
 Tables\Columns\TextColumn::make('url')
-    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", urlAsDefault: true),
+    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", defaultDisplayUrl: true),
 ```
 ```php
 InfoLists\Components\ImageEntry::make('image')
-    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", urlAsDefault: true),
+    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", defaultDisplayUrl: true),
 ```
 ```php
 Tables\Columns\ImageColumn::make('image')
-    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", urlAsDefault: true),
+    ->simpleLightbox(fn ($record) =>  $record?->image ?? "Your Image Url address", defaultDisplayUrl: true),
 ```
 ## Preview
 
