@@ -9,7 +9,8 @@ We have built a collection of best-in-class products:
 
 - [VantagoAds](https://vantagoads.com): A self manage Ads Server, Simplify Your Advertising Strategy.
 - [GatherPro.events](https://gatherpro.events): A Event Photos management tools, Streamline Your Event Photos.
-- [Website CMS Management](https://filamentphp.com/plugins/solution-forest-cms-website): Website CMS Management
+- [Website CMS Management](https://filamentphp.com/plugins/solution-forest-cms-website): Website CMS Management - Filament CMS Plugin
+- [Filaletter](https://filaletter.solutionforest.net): Filaletter - Filament Newsletter Plugin
 
 
 # Filament SimpleLightbox
