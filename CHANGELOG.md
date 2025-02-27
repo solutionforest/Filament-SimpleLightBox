@@ -2,6 +2,16 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## 0.0.11 - 2025-02-27
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/solutionforest/Filament-SimpleLightBox/pull/23
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/solutionforest/Filament-SimpleLightBox/pull/24
+* Support laravel 12 by @cklei-carly in https://github.com/solutionforest/Filament-SimpleLightBox/pull/25
+
+**Full Changelog**: https://github.com/solutionforest/Filament-SimpleLightBox/compare/0.0.10...0.0.11
+
 ## 0.0.10 - 2024-08-06
 
 ### What's Changed
