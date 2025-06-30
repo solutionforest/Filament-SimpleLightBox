@@ -2,6 +2,16 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## 1.0.0-beta.1 - 2025-06-30
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot in https://github.com/solutionforest/Filament-SimpleLightBox/pull/26
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot in https://github.com/solutionforest/Filament-SimpleLightBox/pull/27
+* Support Filament v4, Drop v3 ( v3 please use 0.0.x version)
+
+**Full Changelog**: https://github.com/solutionforest/Filament-SimpleLightBox/compare/0.0.11...0.1.0-beta.1
+
 ## 0.0.11 - 2025-02-27
 
 ### What's Changed
