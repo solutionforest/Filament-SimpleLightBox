@@ -30,11 +30,27 @@ Filament SimpleLightbox is a PHP package that provides a simple and lightweight 
 
 ## Installation
 
+| Filament Version | Filament Simple Light Box Version |
+|------------------|---------------------------|
+| v3.x             | v0.x             |
+| v4.x             | v1.x
+
+
 You can install the package via composer:
 
 ```bash
 composer require solution-forest/filament-simplelightbox
 ```
+
+Publish the assets:
+
+```bash
+php artisan filament:assets
+```
+```bash
+php artisan optimize
+```
+
 
 ## Usage
 
