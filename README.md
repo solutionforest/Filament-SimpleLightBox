@@ -32,7 +32,8 @@ Filament SimpleLightbox is a PHP package that provides a simple and lightweight 
 | Filament Version | Filament Simple Light Box Version |
 |------------------|---------------------------|
 | v3.x             | v0.x             |
-| v4.x             | v1.x
+| v4.x             | v1.x             |
+| v5.x             | v1.x             |
 
 
 You can install the package via composer:
