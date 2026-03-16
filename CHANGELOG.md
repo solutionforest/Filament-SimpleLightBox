@@ -2,6 +2,12 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## Unreleased
+
+### What's Changed
+
+* Add Filament v5 compatibility (update dependency constraints).
+
 ## 1.0.0-beta.1 - 2025-06-30
 
 ### What's Changed
