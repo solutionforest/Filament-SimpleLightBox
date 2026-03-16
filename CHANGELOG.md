@@ -2,6 +2,25 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## 1.1.0 - 2026-03-16
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/26
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/27
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/29
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/30
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/35
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/34
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/33
+* feat: filament v5 by @ImJustToNy in https://github.com/solutionforest/Filament-SimpleLightBox/pull/36
+
+### New Contributors
+
+* @ImJustToNy made their first contribution in https://github.com/solutionforest/Filament-SimpleLightBox/pull/36
+
+**Full Changelog**: https://github.com/solutionforest/Filament-SimpleLightBox/compare/0.0.11...1.1.0
+
 ## Unreleased
 
 ### What's Changed
