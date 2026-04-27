@@ -37,7 +37,7 @@ class SimpleLightBoxPlugin implements Plugin
         };
 
         ImageColumn::macro('simpleLightbox', macro: function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-            /** @var ImageColumn $this */
+            /** @var ImageColumn $this */ // @phpstan-ignore varTag.nativeType (Macroable rebinds $this to the target class at runtime)
             if ($defaultDisplayUrl) {
                 $this->defaultImageUrl($url);
             }
@@ -50,7 +50,7 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         ImageEntry::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-            /** @var ImageEntry $this */
+            /** @var ImageEntry $this */ // @phpstan-ignore varTag.nativeType (Macroable rebinds $this to the target class at runtime)
             if ($defaultDisplayUrl) {
                 $this->defaultImageUrl($url);
             }
@@ -58,11 +58,11 @@ class SimpleLightBoxPlugin implements Plugin
             return $this
                 ->openUrlInNewTab()
                 ->extraAttributes(fn () => ['x-on:click' => 'SimpleLightBox.open(event, \'' . $ensureLightBoxUrl($url, $this) . '\')'], true)
-                ->extraImgAttributes(['class' => 'simple-light-box-img-indicator'], true);
+                ->extraImgAttributes(['class' => 'simple-light-box-img-indicator']);
         });
 
         TextColumn::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-            /** @var TextColumn $this */
+            /** @var TextColumn $this */ // @phpstan-ignore varTag.nativeType (Macroable rebinds $this to the target class at runtime)
             if ($defaultDisplayUrl) {
                 $this->default($url);
             }
@@ -74,7 +74,7 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         TextEntry::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) {
-            /** @var TextEntry $this */
+            /** @var TextEntry $this */ // @phpstan-ignore varTag.nativeType (Macroable rebinds $this to the target class at runtime)
             if ($defaultDisplayUrl) {
                 $this->default($url);
             }
