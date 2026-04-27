@@ -8,6 +8,8 @@ on:
       - 'composer.json'
       - 'composer.lock'
       - 'phpunit.xml.dist'
+      - 'phpstan.neon.dist'
+      - 'phpstan-baseline.neon'
       - '.github/workflows/run-tests.yml'
   pull_request:
     paths:
@@ -15,6 +17,8 @@ on:
       - 'composer.json'
       - 'composer.lock'
       - 'phpunit.xml.dist'
+      - 'phpstan.neon.dist'
+      - 'phpstan-baseline.neon'
       - '.github/workflows/run-tests.yml'
 
 jobs:
@@ -56,3 +60,6 @@ jobs:
 
       - name: Run tests
         run: vendor/bin/pest
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --error-format=github
