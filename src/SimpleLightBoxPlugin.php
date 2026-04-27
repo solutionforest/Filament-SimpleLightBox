@@ -29,7 +29,7 @@ class SimpleLightBoxPlugin implements Plugin
                 $url = $livewire->evaluate($url);
             }
 
-            if (! is_string($url) || is_null($url) || empty($url)) {
+            if (! is_string($url) || empty($url)) {
                 $url = null;
             }
 
@@ -37,12 +37,11 @@ class SimpleLightBoxPlugin implements Plugin
         };
 
         ImageColumn::macro('simpleLightbox', macro: function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-
+            /** @var ImageColumn $this */
             if ($defaultDisplayUrl) {
                 $this->defaultImageUrl($url);
             }
 
-            /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
                 ->action(fn () => null) // override default action for table row
@@ -51,12 +50,11 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         ImageEntry::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-
+            /** @var ImageEntry $this */
             if ($defaultDisplayUrl) {
                 $this->defaultImageUrl($url);
             }
 
-            /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
                 ->extraAttributes(fn () => ['x-on:click' => 'SimpleLightBox.open(event, \'' . $ensureLightBoxUrl($url, $this) . '\')'], true)
@@ -64,12 +62,11 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         TextColumn::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) use ($ensureLightBoxUrl) {
-
+            /** @var TextColumn $this */
             if ($defaultDisplayUrl) {
                 $this->default($url);
             }
 
-            /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
                 ->url($url)
@@ -77,12 +74,11 @@ class SimpleLightBoxPlugin implements Plugin
         });
 
         TextEntry::macro('simpleLightbox', function ($url = null, $defaultDisplayUrl = true) {
-
+            /** @var TextEntry $this */
             if ($defaultDisplayUrl) {
                 $this->default($url);
             }
 
-            /** @phpstan-ignore-next-line */
             return $this
                 ->openUrlInNewTab()
                 // ->extraAttributes(array_merge($extraAttributes, ['x-on:click' => 'SimpleLightBox.open(event, \'' . $url . '\')']));
