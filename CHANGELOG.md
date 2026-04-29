@@ -2,6 +2,16 @@
 
 All notable changes to `Filament-SimpleLightBox` will be documented in this file.
 
+## 1.1.1 - 2026-04-29
+
+### What's Changed
+
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/37
+* Add Laravel 13 support by @ImJustToNy in https://github.com/solutionforest/Filament-SimpleLightBox/pull/41
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.1.0 by @dependabot[bot] in https://github.com/solutionforest/Filament-SimpleLightBox/pull/40
+
+**Full Changelog**: https://github.com/solutionforest/Filament-SimpleLightBox/compare/1.1.0...1.1.1
+
 ## 1.1.0 - 2026-03-16
 
 ### What's Changed
